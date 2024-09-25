@@ -36,5 +36,3 @@ jobs:
           key: ${{ secrets.DEPLOY_KEY }}
           source: "dist/*"
           target: ${{ secrets.DEPLOY_PATH }}
-          rm: true
-
