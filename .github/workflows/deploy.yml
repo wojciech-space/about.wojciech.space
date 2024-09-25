@@ -34,5 +34,7 @@ jobs:
           host: ${{ secrets.DEPLOY_IP }}
           username: ${{ secrets.DEPLOY_USER }}
           key: ${{ secrets.DEPLOY_KEY }}
-          source: "dist"
+          source: "dist/*"
           target: ${{ secrets.DEPLOY_PATH }}
+          rm: true
+
