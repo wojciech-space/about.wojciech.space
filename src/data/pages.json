@@ -1,0 +1,19 @@
+[
+  {
+    "url": "https://wojciech.space",
+    "title": "blog about web development",
+    "language": "en",
+    "technologies": ["Astro", "TypeScript", "Markdown"]
+  },
+  {
+    "url": "https://pelnakulturka.art",
+    "title": "książka, filmy, internet",
+    "language": "pl",
+    "technologies": ["Astro", "TypeScript", "Markdown"]
+  },
+  {
+    "url": "https://wojciech.life",
+    "title": "życiowe luźne zapiski niemieszczące się tematyką nigdzie indziej",
+    "language": "pl"
+  }
+]

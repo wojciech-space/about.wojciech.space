@@ -1,0 +1,23 @@
+---
+import { Icon } from "astro-icon/components";
+
+const { social } = Astro.props;
+
+interface Props {
+  social: ISocial;
+}
+
+interface ISocial {
+  url: string;
+  language?: string;
+  title: string;
+  type: string;
+}
+---
+<a href={social.url} class="flex items-center w-96 max-w-full mb-4 last:mb-0 p-2 border-4 border-black rounded-full text-l shadow-lg transition-all group hover:bg-orange-500/75 hover:font-bold">
+  <Icon name={`simple-icons:${social.type}`} class="transition-all group-hover:text-xl" />
+  <div class="grow flex justify-center items-center">
+    {social.title}
+    {social.language !== undefined && <Icon name={`twemoji:flag-${social.language === "pl" ? "poland" : "united-kingdom"}`} class="text-lg ml-2" />}
+  </div>
+</a>
