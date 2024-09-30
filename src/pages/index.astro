@@ -6,6 +6,8 @@ import Social from "../components/Social.astro";
 
 import socials from "../data/socials.json";
 import pages from "../data/pages.json";
+
+const meLinks = [...socials, ...pages].map((link) => link.url);
 ---
 
 <html lang="en">
@@ -15,6 +17,8 @@ import pages from "../data/pages.json";
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>All links | Wojciech Wernicki</title>
+
+    {meLinks.map((link) => <link rel="me" href={link} />)}
 
     <script is:inline defer data-domain="about.wojciech.space" src="https://stats.wojciech.space/js/script.js"></script>
 	</head>
