@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import { format } from "date-fns";
 
 import Page from "../components/Page.astro";
 import Social from "../components/Social.astro";
@@ -17,6 +18,8 @@ const meLinks = [...socials, ...pages].map((link) => link.url);
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>All links | Wojciech Wernicki</title>
+
+    <meta name="fediverse:creator" content="@wojciech_space@wspanialy.eu" />
 
     {meLinks.map((link) => <link rel="me" href={link} />)}
 
@@ -75,9 +78,11 @@ const meLinks = [...socials, ...pages].map((link) => link.url);
 			</section>
 
       <footer class="text-xs text-center mt-6">
-        <p>Built with {Astro.generator}</p>
+        <p>Built with {Astro.generator} at {format(new Date(), "PPpp")}</p>
 
         <p>Wojciech Wernicki &#x2022; Warszawa, Poland &#x2022; {new Date().getFullYear()}</p>
+
+        <p class="underline"><a href="https://github.com/wojciech-space/about.wojciech.space">Source code</a></p>
       </footer>
 		</div>
 	</body>
