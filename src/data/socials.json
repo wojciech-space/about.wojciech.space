@@ -1,20 +1,8 @@
 [
   {
-    "type": "mastodon",
-    "url": "https://wspanialy.eu/@wojciech_space",
-    "title": "Personal Mastodon",
-    "language": "pl"
-  },
-  {
-    "type": "mastodon",
-    "url": "https://hachyderm.io/@wojciech",
-    "title": "DEV Mastodon",
-    "language": "en"
-  },
-  {
-    "type": "pixelfed",
-    "url": "https://pixel.pol.social/@wojciech_space",
-    "title": "Pixelfed",
+    "type": "bluesky",
+    "url": "https://bsky.app/profile/wojciech.space",
+    "title": "Bluesky",
     "language": "en"
   },
   {
@@ -26,12 +14,7 @@
   {
     "type": "linkedin",
     "url": "https://linkedin.com/in/wojciechwernicki",
-    "title": "LinkedIn"
-  },
-  {
-    "type": "twitter",
-    "url": "https://twitter.com/wojciech_space",
-    "title": "Twitter",
+    "title": "LinkedIn",
     "language": "en"
   }
 ]
