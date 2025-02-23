@@ -6,6 +6,12 @@
     "language": "en"
   },
   {
+    "type": "mastodon",
+    "url": "https://fedi.wojciech.space/@wojciech",
+    "title": "Mastodon",
+    "language": "pl"
+  },
+  {
     "type": "flickr",
     "url": "https://www.flickr.com/photos/wojciech_space/",
     "title": "Flickr",

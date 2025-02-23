@@ -5,85 +5,112 @@ import { format } from "date-fns";
 import Page from "../components/Page.astro";
 import Social from "../components/Social.astro";
 
-import socials from "../data/socials.json";
-import pages from "../data/pages.json";
+import socials from "../data/socials.json" with { type: "json" };
+import pages from "../data/pages.json" with { type: "json" };
 
 const meLinks = [...socials, ...pages].map((link) => link.url);
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>All links | Wojciech Wernicki</title>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>All links | Wojciech Wernicki</title>
 
-    <meta name="fediverse:creator" content="@wojciech_space@wspanialy.eu" />
+    <meta name="fediverse:creator" content="@wojciech@wojciech.space" />
 
     {meLinks.map((link) => <link rel="me" href={link} />)}
 
-    <script is:inline defer data-domain="about.wojciech.space" src="https://stats.wojciech.space/js/script.js"></script>
-	</head>
+    <script
+      is:inline
+      defer
+      data-domain="about.wojciech.space"
+      src="https://stats.wojciech.space/js/script.js"></script>
+  </head>
 
-	<body class="bg-orange-300">
-		<div class="container mx-auto text-base max-w-3xl p-4">
-			<section class="text-center">
-				<Image
-					src="/images/profile-picture-pink.jpg"
-					alt="Person with a full beard and mustache, wearing corrective glasses and pink hoodie."
-					width={196}
-					height={196}
-					class="rounded-lg mx-auto mb-8 shadow-lg"
+  <body class="bg-orange-300">
+    <div class="container mx-auto text-base max-w-3xl p-4">
+      <section class="text-center">
+        <Image
+          src="/images/profile-picture-pink.jpg"
+          alt="Person with a full beard and mustache, wearing corrective glasses and pink hoodie."
+          width={196}
+          height={196}
+          class="rounded-lg mx-auto mb-8 shadow-lg"
           loading="eager"
-				/>
-	
-				<h1 class="text-3xl font-bold">Wojciech Wernicki</h1>
-	
-				<p class="text-sm mb-4">they/them</p>
-	
-				<p class="text-xl">Frontend Developer &#x2022; Scrum Master</p>
-	
-				<p class="text-xl mb-6">Photographer &#x2022; Motorsport Fan &#x2022; Book Reader</p>
-	
-				<p class="text-lg mb-2">
-					I'm Frontend Developer with 7+ years experience with JavaScript, TypeScript, React. Scrum Master since 2018. 
-				</p>
-	
-				<p class="text-lg">
-					I read a lot, listen to music and take photos a little less frequent. Fan of McLaren Formula 1 and Porsche Formula E teams.
-				</p>
-			</section>
+        />
 
-			<section class="text-center">
-				<h2 class="text-2xl font-semibold mt-8 mb-2">Blogs & Personal Pages</h2>
+        <h1 class="text-3xl font-bold">Wojciech Wernicki</h1>
+
+        <p class="text-sm mb-4">they/them</p>
+
+        <p class="text-xl">Frontend Developer &#x2022; Scrum Master</p>
+
+        <p class="text-xl mb-6">
+          Photographer &#x2022; Motorsport Fan &#x2022; Book Reader
+        </p>
+
+        <p class="text-lg mb-2">
+          I'm Frontend Developer with 7+ years experience with JavaScript,
+          TypeScript, React. Scrum Master since 2018.
+        </p>
+
+        <p class="text-lg">
+          I read a lot, listen to music and take photos a little less frequent.
+          Fan of McLaren Formula 1 and Porsche Formula E teams.
+        </p>
+      </section>
+
+      <section class="text-center">
+        <h2 class="text-2xl font-semibold mt-8 mb-2">Blogs & Personal Pages</h2>
 
         <div class="grid md:grid-cols-3 gap-4">
           {pages.map((page) => <Page page={page} />)}
         </div>
 
-        <p class="text-sm mt-4">More projects available soon at <a href="https://codeberg.org/wojciech_space" class="underline">Codeberg</a> or <a href="https://github.com/wojciech-space" class="underline">GitHub</a>.</p>
-			</section>
+        <p class="text-sm mt-4">
+          More projects available soon at <a
+            href="https://codeberg.org/wojciech_space"
+            class="underline">Codeberg</a
+          > or <a href="https://github.com/wojciech-space" class="underline"
+            >GitHub</a
+          >.
+        </p>
+      </section>
 
       <section class="flex flex-col items-center">
-				<h2 class="text-2xl font-semibold mt-8 mb-2 text-center">Social Media</h2>
+        <h2 class="text-2xl font-semibold mt-8 mb-2 text-center">
+          Social Media
+        </h2>
 
         {socials.map((social) => <Social social={social} />)}
       </section>
 
-			<section class="text-center">
-				<h2 class="text-2xl font-semibold mt-8 mb-2">Email</h2>
+      <section class="text-center">
+        <h2 class="text-2xl font-semibold mt-8 mb-2">Email</h2>
 
-        <a href="mailto:wojciech@wojciech.space" class="underline">wojciech [at] wojciech.space</a>
-			</section>
+        <a href="mailto:wojciech@wojciech.space" class="underline"
+          >wojciech [at] wojciech.space</a
+        >
+      </section>
 
       <footer class="text-xs text-center mt-6">
         <p>Built with {Astro.generator} at {format(new Date(), "PPpp O")}</p>
 
-        <p>Wojciech Wernicki &#x2022; Warszawa, Poland &#x2022; {new Date().getFullYear()}</p>
+        <p>
+          Wojciech Wernicki &#x2022; Warszawa, Poland &#x2022; {
+            new Date().getFullYear()
+          }
+        </p>
 
-        <p class="underline"><a href="https://github.com/wojciech-space/about.wojciech.space">Source code</a></p>
+        <p class="underline">
+          <a href="https://github.com/wojciech-space/about.wojciech.space"
+            >Source code</a
+          >
+        </p>
       </footer>
-		</div>
-	</body>
+    </div>
+  </body>
 </html>
